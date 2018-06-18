@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+        "indent": ["error", 4],
+        "no-debugger": "off",
+        "class-methods-use-this": "off",
+        "eqeqeq": "off",
+        "no-plusplus": "off",
+        "no-return-assign": "off",
+        "no-param-reassign": "off",
+        "no-underscore-dangle": "off",
+        "no-continue": "off",
+        "no-multi-assign": "off",
+        "no-mixed-operators": "off",
+        "no-restricted-syntax": "off"
+    }
+}

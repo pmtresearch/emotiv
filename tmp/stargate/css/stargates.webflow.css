@@ -1,0 +1,608 @@
+body {
+  background-color: #050505;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.scene-wrap {
+   overflow-x: hidden;
+}
+
+.gate-overlay {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, hsla(0, 0%, 100%, 0), rgba(31, 121, 236, .28) 43%, #1f79ec);
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, hsla(0, 0%, 100%, 0), rgba(31, 121, 236, .28) 43%, #1f79ec);
+  box-shadow: inset 0 0 13px 4px #000;
+  opacity: 0.69;
+}
+
+.gate-water-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 37vw;
+  height: 37vw;
+  border-radius: 50%;
+  background-image: url('../images/giphy.gif');
+  background-position: 0px 0px;
+  background-size: 256px;
+  box-shadow: inset 0 -34px 39px 0 #000;
+}
+
+.gate-light {
+  position: absolute;
+  left: 0px;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  z-index: 4;
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  background-color: hsla(0, 0%, 100%, .79);
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, #fff 47%, rgba(231, 254, 255, 0));
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #fff 47%, rgba(231, 254, 255, 0));
+  box-shadow: 0 0 50px 22px hsla(0, 0%, 100%, .88), inset 0 0 50px 0 #fff;
+  -webkit-filter: blur(60px);
+  filter: blur(60px);
+}
+
+.container {
+  position: absolute;
+  left: 0px;
+  top: 22%;
+  right: 0px;
+  z-index: 6;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 50vw;
+  height: 34vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-image: -webkit-radial-gradient(circle closest-corner at 76% 125%, rgba(0, 0, 0, .77) 71%, hsla(0, 0%, 9%, 0)), -webkit-radial-gradient(circle closest-corner at 21% 121%, rgba(0, 0, 0, .77) 79%, hsla(0, 0%, 9%, 0));
+  background-image: radial-gradient(circle closest-corner at 76% 125%, rgba(0, 0, 0, .77) 71%, hsla(0, 0%, 9%, 0)), radial-gradient(circle closest-corner at 21% 121%, rgba(0, 0, 0, .77) 79%, hsla(0, 0%, 9%, 0));
+  box-shadow: 0 85px 50px -36px rgba(0, 0, 0, .89);
+  opacity: 1;
+}
+
+.scene {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 80vw;
+  height: 59vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-perspective-origin: 50% 100%;
+  perspective-origin: 50% 100%;
+}
+
+.background-img {
+  position: relative;
+  left: -12.5%;
+  top: 0px;
+  right: 0px;
+  width: 125%;
+  max-width: none;
+}
+
+.background-img.leyer {
+  position: absolute;
+}
+
+.ring-signs {
+  position: absolute;
+  left: 0px;
+  top: 9%;
+  right: 0px;
+  display: block;
+  overflow: hidden;
+  width: 52vw;
+  height: 42vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ring-signs-img {
+  position: absolute;
+  left: 0px;
+  top: 16px;
+  right: 0px;
+  bottom: 0px;
+  width: 101%;
+  max-width: none;
+  margin-left: -0.5%;
+  border-radius: 50%;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.gate-water-shadow {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -74px;
+  overflow: hidden;
+  width: 46%;
+  height: 73%;
+  border-radius: 50%;
+  background-image: url('../images/giphy.gif');
+  background-position: 0px 0px;
+  background-size: 256px;
+  box-shadow: inset 0 -7px 15px 25px #000, 0 40px 50px 20px #000;
+  opacity: 0.25;
+  -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(0deg) translate3d(60%, 0px, -134px);
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(0deg) translate3d(60%, 0px, -134px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.gate-shadow-overlay {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, hsla(0, 0%, 100%, 0) 15%, #000 80%);
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, hsla(0, 0%, 100%, 0) 15%, #000 80%);
+  box-shadow: inset 0 0 13px 4px #000;
+  opacity: 0.63;
+  -webkit-filter: blur(28px);
+  filter: blur(28px);
+}
+
+.gate-light-shadow {
+  position: absolute;
+  left: 0px;
+  top: 25%;
+  right: 0px;
+  bottom: 0px;
+  z-index: 4;
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  background-color: hsla(0, 0%, 100%, .79);
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, #fff 47%, rgba(231, 254, 255, 0));
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #fff 47%, rgba(231, 254, 255, 0));
+  box-shadow: 0 0 50px 22px hsla(0, 0%, 100%, .88), inset 0 0 50px 0 #fff;
+  -webkit-filter: blur(9px);
+  filter: blur(9px);
+}
+
+.scene-wrap {
+  position: relative;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  background-color: #000;
+  box-shadow: inset 0 0 50px 500px #000;
+}
+
+.ring-signs-img-shadow {
+  position: absolute;
+  left: 0px;
+  top: 7%;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  width: 89%;
+  height: 108%;
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, #000 61%, hsla(0, 0%, 100%, 0) 64%, #000 72%, #000);
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #000 61%, hsla(0, 0%, 100%, 0) 64%, #000 72%, #000);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.btn {
+  margin-bottom: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  -webkit-transition: border 250ms ease, text-shadow 250ms ease;
+  transition: border 250ms ease, text-shadow 250ms ease;
+  font-family: 'Stargate sg1 address glyphs', sans-serif;
+  font-size: 4vw;
+  line-height: 1.3;
+}
+
+.btn:hover {
+  border-color: rgba(207, 172, 29, .39);
+  text-shadow: 0 0 30px #fff;
+}
+
+.btn.last {
+  padding-left: 15px;
+  border-radius: 50%;
+  background-color: #cf481d;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, #cfac1d, hsla(0, 0%, 100%, 0) 78%);
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #cfac1d, hsla(0, 0%, 100%, 0) 78%);
+}
+
+.chevrons {
+  position: absolute;
+  left: 0px;
+  top: 10%;
+  right: 0px;
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.chevron {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.chevron-right-1 {
+  position: absolute;
+  left: 0%;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(40.6deg);
+  -ms-transform: rotate(40.6deg);
+  transform: rotate(40.6deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-right-2 {
+  position: absolute;
+  left: 0%;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(81deg);
+  -ms-transform: rotate(81deg);
+  transform: rotate(81deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-right-3 {
+  position: absolute;
+  left: 0%;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(120.6deg);
+  -ms-transform: rotate(120.6deg);
+  transform: rotate(120.6deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-left-1 {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(-40.4deg);
+  -ms-transform: rotate(-40.4deg);
+  transform: rotate(-40.4deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-left-2 {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(-80.8deg);
+  -ms-transform: rotate(-80.8deg);
+  transform: rotate(-80.8deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-left-3 {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  right: 0px;
+  display: block;
+  width: 25%;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transform: rotate(-120.4deg);
+  -ms-transform: rotate(-120.4deg);
+  transform: rotate(-120.4deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.chevron-triangle-top {
+  position: absolute;
+  left: -2px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 3vw;
+  height: 3vw;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 1;
+}
+
+.chevron-bottom {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 100%;
+  height: 5vw;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('../images/shevron-2.png');
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.chevron-move-light-off {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 100%;
+  height: 3vw;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-linear-gradient(153deg, transparent 37%, #050505 39%, #474545 45%, transparent 47%), -webkit-linear-gradient(29deg, transparent 38%, #050505 39%, #474545 46%, transparent 50%);
+  background-image: linear-gradient(297deg, transparent 37%, #050505 39%, #474545 45%, transparent 47%), linear-gradient(61deg, transparent 38%, #050505 39%, #474545 46%, transparent 50%);
+  opacity: 1;
+}
+
+.chevron-triangle-top-light {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 3vw;
+  height: 3.1vw;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-linear-gradient(160deg, hsla(0, 0%, 100%, 0) 28%, #cf641d 34%, rgba(207, 100, 29, .63) 42%, rgba(207, 172, 29, .19) 69%), -webkit-linear-gradient(19deg, hsla(0, 0%, 100%, 0) 22%, #cf641d 31%, rgba(207, 100, 29, .59) 40%, hsla(0, 0%, 100%, 0) 79%), -webkit-radial-gradient(circle farthest-side at 51% -20%, #cfac1d 30%, hsla(0, 0%, 100%, 0) 52%);
+  background-image: linear-gradient(290deg, hsla(0, 0%, 100%, 0) 28%, #cf641d 34%, rgba(207, 100, 29, .63) 42%, rgba(207, 172, 29, .19) 69%), linear-gradient(71deg, hsla(0, 0%, 100%, 0) 22%, #cf641d 31%, rgba(207, 100, 29, .59) 40%, hsla(0, 0%, 100%, 0) 79%), radial-gradient(circle farthest-side at 51% -20%, #cfac1d 30%, hsla(0, 0%, 100%, 0) 52%);
+  box-shadow: inset 0 2px 15px 0 #2e2727;
+  opacity: 0;
+}
+
+.chevron-triangle-top-light-off {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 2.8vw;
+  height: 3vw;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-linear-gradient(270deg, rgba(71, 69, 69, .47) 17%, transparent 21%), -webkit-linear-gradient(160deg, hsla(0, 0%, 100%, 0) 28%, #2e2727 34%, #2e2727 42%, hsla(0, 0%, 100%, 0) 65%), -webkit-linear-gradient(21deg, hsla(0, 0%, 100%, 0) 31%, #2e2727 33%, #2e2727 39%, hsla(0, 0%, 100%, 0) 58%);
+  background-image: linear-gradient(180deg, rgba(71, 69, 69, .47) 17%, transparent 21%), linear-gradient(290deg, hsla(0, 0%, 100%, 0) 28%, #2e2727 34%, #2e2727 42%, hsla(0, 0%, 100%, 0) 65%), linear-gradient(69deg, hsla(0, 0%, 100%, 0) 31%, #2e2727 33%, #2e2727 39%, hsla(0, 0%, 100%, 0) 58%);
+  opacity: 1;
+}
+
+.chevron-top {
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  right: 0px;
+  width: 100%;
+  height: 5vw;
+  background-image: url('../images/shevron-1.png');
+  background-position: 50% 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.chevron-move {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 4vw;
+}
+
+.chevron-move-light {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 100%;
+  height: 3vw;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-linear-gradient(153deg, transparent 37%, #cf641d 39%, #cfac1d 45%, transparent 47%), -webkit-linear-gradient(29deg, transparent 37%, #cf641d 40%, #cfac1d 44%, transparent 48%);
+  background-image: linear-gradient(297deg, transparent 37%, #cf641d 39%, #cfac1d 45%, transparent 47%), linear-gradient(61deg, transparent 37%, #cf641d 40%, #cfac1d 44%, transparent 48%);
+  opacity: 0;
+}
+
+.buttons-wrap {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  padding-top: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.gate-water-shadow-hide {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -74px;
+  z-index: 5;
+  overflow: hidden;
+  width: 46%;
+  height: 73%;
+  background-image: -webkit-linear-gradient(0deg, transparent, rgba(0, 0, 0, .89) 23%, #000 51%, rgba(0, 0, 0, .84) 82%, transparent);
+  background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, .89) 23%, #000 51%, rgba(0, 0, 0, .84) 82%, transparent);
+  opacity: 1;
+  -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(0deg) translate3d(60%, 0px, -134px);
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(0deg) translate3d(60%, 0px, -134px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.cover-leyer {
+  position: absolute;
+  left: 0px;
+  top: 120px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.tooltip-wrap {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 8px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  font-family: Montserrat, sans-serif;
+  color: hsla(0, 0%, 75%, .98);
+}
+
+.open-here {
+  position: absolute;
+  top: 2vw;
+  right: 1vw;
+  padding: 9px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(132, 183, 248, .67);
+  border-radius: 4px;
+  color: rgba(132, 183, 248, .67);
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .open-here {
+    font-size: 12px;
+  }
+  
+@media (max-width: 767px)
+  .tooltip-wrap {
+    left: 0px;
+    top: 75%;
+    right: 0px;
+    width: 75%;
+    font-size: 12px;
+    text-align: center;
+  }
+@media (max-width: 479px)
+  .tooltip-wrap {
+    bottom: -55%;
+    padding-right: 20px;
+    padding-left: 20px;
+  } 
+  
+}
+
+@font-face {
+  font-family: 'Stargate sg1 address glyphs';
+  src: url('../fonts/Stargate-sg1_address_glyphs.woff2') format('woff2'), url('../fonts/Stargate-sg1_address_glyphs.woff') format('woff'), url('../fonts/Stargate-sg1_address_glyphs.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
