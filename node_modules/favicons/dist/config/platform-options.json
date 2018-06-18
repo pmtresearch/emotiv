@@ -1,0 +1,10 @@
+{
+	"offset": {
+		"platforms": ["android", "appleIcon", "appleStartup", "firefox", "coast"],
+		"defaultTo": 0
+	},
+	"background": {
+		"platforms": ["android", "appleIcon", "appleStartup", "firefox", "coast", "windows", "yandex"],
+		"defaultTo": false
+	}
+}
